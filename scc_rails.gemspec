@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.version     = SccRails::VERSION
   spec.authors     = ['FlowerWrong']
   spec.email       = ['sysuyangkang@gmail.com']
-  spec.homepage    = 'https://github.com/zhulux'
+  spec.homepage    = 'https://github.com/FlowerWrong/scc_rails'
   spec.summary     = 'spring cloud config client for rails'
   spec.description = 'spring cloud config client for rails with /refresh endpoint and init to $cloud_env'
   spec.license     = 'MIT'
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = 'https://rubygems.org/'
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
       'public gem pushes.'
@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   spec.add_dependency 'rails', '~> 5.2.2', '>= 5.2.2.1'
-  spec.add_dependency 'scc_ruby'
+  spec.add_dependency 'scc_ruby', '~> 0.1'
 
-  spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'sqlite3', '~> 1.4'
 end

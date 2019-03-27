@@ -1,4 +1,4 @@
-require "scc_rails/engine"
+require 'scc_rails/engine'
 
 module SccRails
   # Your code goes here...
