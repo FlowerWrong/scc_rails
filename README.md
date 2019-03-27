@@ -1,8 +1,15 @@
 # SccRails
-Short description and motivation.
+
+Spring cloud config client integration with rails, use scc_ruby, just use `$cloud_env`.
 
 ## Usage
-How to use my plugin.
+
+```ruby
+# routes.rb
+mount SccRails::Engine => '/scc'
+```
+
+and then you can use `curl 127.0.0.1:3000/scc/refresh` to refresh `$cloud_env`
 
 ## Installation
 Add this line to your application's Gemfile:
