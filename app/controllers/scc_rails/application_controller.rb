@@ -1,6 +1,6 @@
 module SccRails
-  class ApplicationController < ActionController::API
-    # protect_from_forgery with: :exception
+  class ApplicationController < ActionController::Base
+    http_basic_authenticate_with name: ENV['SCC_USERNAME'], password: ENV['SCC_PASSWORD'], only: :refresh
 
     def refresh
       SccRails::Engine.reload_config
