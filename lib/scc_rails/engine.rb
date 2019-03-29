@@ -9,7 +9,11 @@ module SccRails
     end
 
     def self.reload_config
-      $cloud_env = SccRuby::Api.fetch(ENV['CONFIG_SERVER_URL'], ENV['APP_NAME'] || Rails.application.class.parent.to_s.downcase, Rails.env)
+      if ENV['CONFIG_SERVER_URL'].blank?
+        puts 'No CONFIG_SERVER_URL provided, scc_rails will not fetch config from spring cloud config server'
+      else
+        $cloud_env = SccRuby::Api.fetch(ENV['CONFIG_SERVER_URL'], ENV['APP_NAME'] || Rails.application.class.parent.to_s.downcase, Rails.env, ENV['CLOUD_USERNAME'] || '', ENV['CLOUD_PASSWORD'] || '')
+      end
     end
   end
 end
